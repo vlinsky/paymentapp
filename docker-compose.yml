@@ -1,0 +1,33 @@
+version: '3'
+services:
+  paymentapp:
+    container_name: paymentapp
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - ./public:/usr/src/app
+      - ./config:/usr/src/config
+      - ./src:/usr/src/src
+      - ./vendor:/usr/src/vendor
+      - ./.env:/usr/src/.env
+      - ./var:/usr/src/var
+      - ./bin:/usr/src/bin
+    tty: true
+  nginx:
+    image: nginx
+    container_name: nginx_paymentapp
+    restart: always
+    ports:
+      - 8888:8888
+    volumes:
+      - ./public:/usr/src/app
+      - ./config:/usr/src/config
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./var/log:/var/log/nginx
+    tty: true
+    depends_on:
+      - paymentapp
+    expose:
+      - 8888
