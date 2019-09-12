@@ -14,6 +14,14 @@ use App\Payment\User;
 class PaymentController extends AbstractController
 {
     /**
+     * Process order payment REST api
+     * 
+     * usage : /payment/order/{orderId}/
+     * method : POST 
+     * params : 
+     *      token - user access token
+     *      userId - user id
+     *      
      * @Route("/payment/order/{orderId}/", name="orderpayment", methods={"POST"})
      */
     public function processPayment($orderId, Request $request, LoggerInterface $logger)
