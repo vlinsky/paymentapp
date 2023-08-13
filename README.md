@@ -1,4 +1,6 @@
 # paymentapp
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvlinsky%2Fpaymentapp.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvlinsky%2Fpaymentapp?ref=badge_shield)
+
 paymentapp microservice
 
 ##installation  
@@ -16,3 +18,6 @@ Process order payment /payment/order/{orderId}/
      	token - user access token  
      	userId - user id  
     	 return : json with payment staus  
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvlinsky%2Fpaymentapp.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvlinsky%2Fpaymentapp?ref=badge_large)
